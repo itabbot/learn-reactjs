@@ -4,6 +4,7 @@
 - [2. 添加样式](#2-添加样式)
 - [3. 显示数据](#3-显示数据)
 - [4. 条件渲染](#4-条件渲染)
+- [5. 循环渲染](#5-循环渲染)
 
 ## 1. 创建和嵌套组件
 
@@ -153,4 +154,26 @@ return (
 <div>
   {isLoggedIn && <AdminPanel />}
 </div>
+```
+
+## 5. 循环渲染
+
+使用 `for` 循环或数组 `map()` 函数等 JavaScript 功能来实现循环渲染：
+
+```JavaScript
+const products = [
+  { title: 'Cabbage', id: 1 },
+  { title: 'Garlic', id: 2 },
+  { title: 'Apple', id: 3 },
+];
+
+const listItems = products.map(product =>
+  <li key={product.id}>
+    {product.title}
+  </li>
+);
+
+return (
+  <ul>{listItems}</ul>
+);
 ```
