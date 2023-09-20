@@ -5,6 +5,7 @@
 - [3. 显示数据](#3-显示数据)
 - [4. 条件渲染](#4-条件渲染)
 - [5. 循环渲染](#5-循环渲染)
+- [6. 事件处理](#6-事件处理)
 
 ## 1. 创建和嵌套组件
 
@@ -176,4 +177,22 @@ const listItems = products.map(product =>
 return (
   <ul>{listItems}</ul>
 );
+```
+
+## 6. 事件处理
+
+通过在组件内声明事件处理函数来响应事件（注意 `onClick={handleClick}` 最后没有括号！）：
+
+```JavaScript
+export default function MyButton() {
+    function handleClick() {
+        alert('你点击了我!');
+    }
+
+    return (
+        <button onClick={handleClick}>
+            点一下试试
+        </button>
+    );
+}
 ```
