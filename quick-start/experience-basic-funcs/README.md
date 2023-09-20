@@ -3,6 +3,7 @@
 - [1. 创建和嵌套组件](#1-创建和嵌套组件)
 - [2. 添加样式](#2-添加样式)
 - [3. 显示数据](#3-显示数据)
+- [4. 条件渲染](#4-条件渲染)
 
 ## 1. 创建和嵌套组件
 
@@ -118,4 +119,38 @@ export default function Profile() {
         </>
     );
 }
+```
+
+## 4. 条件渲染
+
+在 React 中，没有特殊的语法来编写条件。使用与编写常规 JavaScript 代码时相同的技术：
+
+```JavaScript
+let content;
+if (isLoggedIn) {
+  content = <AdminPanel />;
+} else {
+  content = <LoginForm />;
+}
+return (
+  <div>
+    {content}
+  </div>
+);
+```
+
+```JavaScript
+<div>
+  {isLoggedIn ? (
+    <AdminPanel />
+  ) : (
+    <LoginForm />
+  )}
+</div>
+```
+
+```JavaScript
+<div>
+  {isLoggedIn && <AdminPanel />}
+</div>
 ```
