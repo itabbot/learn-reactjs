@@ -6,6 +6,7 @@
 - [4. 条件渲染](#4-条件渲染)
 - [5. 循环渲染](#5-循环渲染)
 - [6. 事件处理](#6-事件处理)
+- [7. 组件间共享数据](#7-组件间共享数据)
 
 ## 1. 创建和嵌套组件
 
@@ -193,6 +194,45 @@ export default function MyButton() {
         <button onClick={handleClick}>
             点一下试试
         </button>
+    );
+}
+```
+
+## 7. 组件间共享数据
+
+以 `use` 开头的函数称为 Hook，`useState` 是 React 提供的内置 Hook，用于存储组件状态。以下在父组件中定义状态，并传递给子组件作为 props 参数，子组件通过它来同步状态：
+
+```JavaScript
+// Counter.js
+export default function Counter(props) {
+    const {count, onClick} = props
+    return (
+        <button onClick={onClick}>
+            {count}
+        </button>
+    );
+}
+```
+
+```JavaScript
+// App.js
+
+import {useState} from "react";
+import Counter from "./Counter";
+
+export default function App() {
+    const [count, setCount] = useState(0)
+
+    function handleCounter() {
+        setCount(count + 1);
+    }
+
+    return (
+        <div>
+            <Counter count={count} onClick={handleCounter}/>
+            <Counter count={count} onClick={handleCounter}/>
+            App
+        </div>
     );
 }
 ```
