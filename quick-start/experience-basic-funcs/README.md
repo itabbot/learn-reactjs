@@ -2,6 +2,7 @@
 
 - [1. 创建和嵌套组件](#1-创建和嵌套组件)
 - [2. 添加样式](#2-添加样式)
+- [3. 显示数据](#3-显示数据)
 
 ## 1. 创建和嵌套组件
 
@@ -88,4 +89,33 @@ export default function Avatar() {
 ```html
 <!-- 编译后如下 -->
 <img class="avatar_avatar__1RS4G" />
+```
+
+## 3. 显示数据
+
+JSX 允许将标记放入 JavaScript 中。大括号让您 “转回” JavaScript，这样您就可以从代码中嵌入一些变量并将其显示给用户，以下演示文本、普通属性，以及特别的 style 属性：
+
+```JavaScript
+const user = {
+    name: 'itabbot',
+    imageUrl: '/logo.png',
+    imageSize: 192,
+};
+
+export default function Profile() {
+    return (
+        <>
+            <h1>{user.name}</h1>
+            <img
+                className="avatar"
+                src={user.imageUrl}
+                alt={'Photo of ' + user.name}
+                style={{
+                    width: user.imageSize,
+                    height: user.imageSize
+                }}
+            />
+        </>
+    );
+}
 ```
