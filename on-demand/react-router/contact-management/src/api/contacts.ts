@@ -1,9 +1,8 @@
 import localforage from "localforage";
 import {matchSorter} from "match-sorter";
-import Contact from "../routes/contact.tsx";
 
 // 联系人
-interface Contact {
+export interface Contact {
     id: string; // 唯一标识
     createdAt: number; // 创建时间
     favorite: boolean; // 是否收藏
@@ -15,7 +14,7 @@ interface Contact {
 }
 
 // 联系人关系对象
-interface ContactUpdate {
+export interface ContactUpdate {
     favorite?: boolean; // 是否收藏
     first?: string; // 名字
     last?: string; // 姓氏
