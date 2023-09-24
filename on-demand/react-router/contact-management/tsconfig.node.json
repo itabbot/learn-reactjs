@@ -1,10 +1,19 @@
 {
+  // 编译选项
   "compilerOptions": {
+    // 启用项目合成模式，将允许使用项目引用和增量构建
     "composite": true,
+    // 跳过对引用的库文件进行检查，可以提高构建速度
     "skipLibCheck": true,
+    // 指定输出的模块系统为 ESNext
     "module": "ESNext",
+    // 使用打包器进行模块解析，适用于使用打包工具（如 Webpack、Rollup）构建的项目
     "moduleResolution": "bundler",
+    // 允许向没有默认导出的模块引入默认导入
     "allowSyntheticDefaultImports": true
   },
-  "include": ["vite.config.ts"]
+  // 包含在编译过程中的文件或目录
+  "include": [
+    "vite.config.ts"
+  ]
 }

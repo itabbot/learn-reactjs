@@ -1,25 +1,55 @@
 {
+  // 编译选项
   "compilerOptions": {
+    // 指定编译输出的目标 JavaScript 版本为 ES2020
     "target": "ES2020",
+    // 启用类字段定义的 ECMAScript 提案语法支持
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    // 指定要包含在编译过程中的 JavaScript 标准库和 DOM 相关的类型声明
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    // 指定模块的输出格式为 ESNext
     "module": "ESNext",
+    // 跳过对声明文件的类型检查，可以提高编译速度
     "skipLibCheck": true,
+    //
 
     /* Bundler mode */
+    // 指定模块解析策略为打包器（bundler）模式
     "moduleResolution": "bundler",
+    // 允许在导入语句中使用 TypeScript 文件的扩展名
     "allowImportingTsExtensions": true,
+    // 允许导入 JSON 文件作为模块
     "resolveJsonModule": true,
+    // 将每个文件作为单独的模块进行编译
     "isolatedModules": true,
+    // 禁止输出编译后的文件，主要用于类型检查而非实际编译结果
     "noEmit": true,
+    // 指定 JSX 语法转换的方式为 React 的 JSX 转换规则
     "jsx": "react-jsx",
+    //
 
     /* Linting */
+    // 开启严格模式，在编译过程中应用更多的类型检查和严格的语法规则
     "strict": true,
+    // 检查是否存在未使用的局部变量
     "noUnusedLocals": true,
+    // 检查是否存在未使用的函数参数
     "noUnusedParameters": true,
+    // 检查是否存在在 switch 语句中没有显式处理的情况
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  // 包含在编译过程中的文件或目录
+  "include": [
+    "src"
+  ],
+  // 指定引用的 TypeScript 配置文件
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }
