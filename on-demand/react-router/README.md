@@ -1,11 +1,5 @@
 # React Router<!-- omit in toc -->
 
-- [1. 相关资源](#1-相关资源)
-- [2. 定义](#2-定义)
-- [3. 背景](#3-背景)
-- [4. 应用场景](#4-应用场景)
-- [5. 尝试](#5-尝试)
-
 ## 1. 相关资源
 
 [官方网站](https://reactrouter.com) | [GitHub](https://github.com/remix-run/react-router)
