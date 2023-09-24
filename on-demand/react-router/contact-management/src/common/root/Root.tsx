@@ -39,7 +39,7 @@ export default function Root(): JSX.Element {
                         <div className="sr-only" aria-live="polite"></div>
                     </Form>
                     <Form method="post">
-                        <button type="submit">New</button>
+                        <button type="submit" style={{width: "3.5rem"}}>新建</button>
                     </Form>
                 </div>
                 <nav>
@@ -57,7 +57,7 @@ export default function Root(): JSX.Element {
                                         {contact.first || contact.last ? (
                                             <>{contact.first} {contact.last} </>
                                         ) : (
-                                            <i>No Name</i>
+                                            <i>未命名</i>
                                         )}
                                         {" "}
                                         {contact.favorite && <span>★</span>}
@@ -66,7 +66,7 @@ export default function Root(): JSX.Element {
                             ))}
                         </ul>
                     ) : (
-                        <p><i>No contacts</i></p>
+                        <p><i>没有匹配项</i></p>
                     )}
                 </nav>
             </div>

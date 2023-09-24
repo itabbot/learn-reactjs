@@ -35,7 +35,7 @@ export default function ContactDetail(): JSX.Element {
                     {contact.first || contact.last ? (
                         <>{contact.first} {contact.last}</>
                     ) : (
-                        <i>No Name</i>
+                        <i>未命名</i>
                     )}{" "}
                     <Favorite contact={contact}/>
                 </h1>
@@ -51,11 +51,11 @@ export default function ContactDetail(): JSX.Element {
                 {contact.notes && <p>{contact.notes}</p>}
 
                 <div>
-                    <Form action="../edit">
+                    <Form action="./edit">
                         <button type="submit">编辑</button>
                     </Form>
                     <Form
-                        method="post" action="destroy"
+                        method="post" action="./destroy"
                         onSubmit={(event) => {
                             if (!confirm("请确认是否要删除此记录。")) event.preventDefault();
                         }}

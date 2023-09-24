@@ -8,7 +8,7 @@ export default function EditContact(): JSX.Element {
     return (
         <Form method="post" id="contact-form">
             <p>
-                <span>Name</span>
+                <span>名字</span>
                 <input
                     placeholder="名字" aria-label="名字"
                     type="text" name="first"
